@@ -1,0 +1,48 @@
+Autostart and Desktop Shortcut instructions
+
+Create the autostart directory (if it doesn't exist):
+Open a terminal on the RPi and execute:
+
+    mkdir -p /home/pi/.config/autostart
+
+Create a .desktop file.
+Create a new file for your script within the autostart directory. Replace your_script_name with a 
+descriptive name for your script.
+
+    nano /home/pi/.config/autostart/your_script_name.desktop
+
+Add content to the .desktop file.
+Paste the following content into the your_script_name.desktop file, replacing /path/to/your/script.py 
+with the actual full path to your Python script:
+
+    [Desktop Entry]
+    Type=Application
+    Name=YourScriptName
+    Exec=/usr/bin/python3 /path/to/your/script.py
+
+Type=Application: Specifies that this is an application launcher.
+Name=YourScriptName: A user-friendly name for your script.
+Exec=/usr/bin/python3 /path/to/your/script.py: This is the crucial line. It tells the system to execute 
+your Python script using the python3 interpreter. Ensure the path to your script is correct.
+save and exit.
+
+Press Ctrl+X, then Y to confirm saving, and Enter to write the file. Reboot your Raspberry Pi.
+
+    sudo reboot
+
+After rebooting, your Python script will automatically launch once the desktop environment is fully loaded.
+
+To add shortcut to RPi desktop, create textfile 'bible_clock.desktop' on the desktop, 
+/home/pi/Desktop/yourname.desktop. Then add;
+
+[Desktop Entry]
+Name=My Name
+Comment=My application which does this
+Icon=/home/pi/bible_clock/bible_icon.png
+Exec=/usr/bin/python3 /home/pi/bible_clock/bible_clock.py
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;
+
+Save and close.

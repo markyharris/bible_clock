@@ -1,0 +1,33 @@
+Touchscreen Instructions for Elecrow LCD5 display. Should work with other displays, 
+but not tested anything else.
+
+Strong recommendation: Do not bother downloading the so-called "driver" noted in various places. 
+The version for Debian Jessie is really just a script that copies configuration files 
+(that seem to have some errors) into your /etc/ directories that brick your device. 
+Happily, there is no need to do this, you can easily modify the files yourself.
+
+Prior to connecting the new display, do the following:
+
+The only software you need is for the touchscreen. You can get this with "sudo apt-get install xinput-calibrator"
+
+Then edit /boot/config.txt to add the following lines:
+----------------------------------------------------------------------------------
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+hdmi_cvt 800 400 60 6 0 0 0
+dtparam=spi=on
+dtparam=i2c_arm=on
+
+dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900 <======Note this is all on 1 line!
+
+dtoverlay=w1-gpio-pullup,gpiopin=4,extpullup=1
+----------------------------------------------------------------------------------
+Shutdown the pi, and connect the display. When you power it back up, you should have a perfect display. 
+You can now calibrate the touchscreen by running Menu-->Preferences-->Calibrate Touchscreen. 
+Click each of the four targets when requested and then you will get a text window which explains what 
+you should put into a calibration file. For the Pi, the filename should be 
+/usr/share/X11/xorg.conf.d/99-calibration.conf.
+
+Use the touchscreen calibrator under Preferences in the Unix desktop to calibrate. 
+This may or may not work properly.
