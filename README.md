@@ -1,4 +1,4 @@
-# bible_clock
+# Wifi Bible Clock
 Bible Clock that displays the bible's Book, Chapter and Verse which indicates the current time.
 Based on similar gadgets available for sale online, albeit at a premium price.
 
