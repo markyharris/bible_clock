@@ -30,7 +30,14 @@ global font_msg_size
 
 # Routines
 def toggle_time_mode():
-    global use_screen_mode
+    global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
+    global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
+    global bg_color,msg_color,label_color,line_color,border_color,y_offset,bdr_width,font_label_size
+    global font_msg_size,debug_toggle
+
+    if debug_toggle == 1:
+        print('use_screen_mode',use_screen_mode)
+        
     if use_screen_mode == 1:
         use_screen_mode = 0
         button6_text = "Light/Dark\nMode Off"
@@ -45,15 +52,16 @@ def toggle_time_mode():
 def check_time_and_toggle(): # Change the light/dark mode if use_screen_mode is set
     
     # if light_dark_mode = 1 then light, otherwise dark
-    global light_dark_mode,light_mode_on,dark_mode_on
-    global dark_bg_color,dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
-    global bg_color,msg_color,label_color,light_dark_mode,use_screen_mode
+    global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
+    global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
+    global bg_color,msg_color,label_color,line_color,border_color,y_offset,bdr_width,font_label_size
+    global font_msg_size,debug_toggle
     
     button6_text = "Light/Dark\nMode On" # newlines create a larger button
 
     current_time = [time.strftime("%H%M"),time.strftime("%-H%M"),time.strftime("%I%M"),time.strftime("%-I%M")]
-    if debug_toggle: print("time list=",current_time)
-    if debug_toggle: print("Light=",light_mode_on,"Dark=",dark_mode_on)
+    if debug_toggle == 1: print("time list=",current_time)
+    if debug_toggle == 1: print("Light=",light_mode_on,"Dark=",dark_mode_on)
     
     if light_mode_on in current_time:
         light_dark_mode = 1
@@ -77,8 +85,10 @@ def check_time_and_toggle(): # Change the light/dark mode if use_screen_mode is 
 
 
 def screen_mode():
-    global dark_bg_color,dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
-    global bg_color,msg_color,label_color,light_dark_mode
+    global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
+    global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
+    global bg_color,msg_color,label_color,line_color,border_color,y_offset,bdr_width,font_label_size
+    global font_msg_size,debug_toggle
 
     if light_dark_mode == 1:
         light_dark_mode = 0
@@ -97,14 +107,14 @@ def screen_mode():
     else:
         button5_text = "Light\nMode"
 
-    if debug_toggle: print("light_dark_mode =",light_dark_mode)
+    if debug_toggle == 1: print("light_dark_mode =",light_dark_mode)
     invisible_button5.config(text=button5_text) #
     update_display_settings()
 
 
 def get_verse(version_code="en-asv", book = "genesis", chapter = "1", verse_num = "1"):
     """Returns the text of a verse given book, chapter and verse number."""
-    if debug_toggle: print("https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/"+version_code+"/books/"+book+"/chapters/"+chapter+"/verses/"+verse_num+".json") # debug
+    if debug_toggle == 1: print("https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/"+version_code+"/books/"+book+"/chapters/"+chapter+"/verses/"+verse_num+".json") # debug
     response = requests.get("https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles/"+version_code+"/books/"+book+"/chapters/"+chapter+"/verses/"+verse_num+".json")
     data = response.json()
     return(data["text"])
@@ -212,7 +222,11 @@ def reboot_pi():
 
 
 def update_display_settings(): # Function to update variables and write to config.py
-    global hour_12, bg_color, msg_color, label_color, line_color, border_color, y_offset, bdr_width, font_label_size, font_msg_size, debug_toggle,light_dark_mode    
+    global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
+    global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
+    global bg_color,msg_color,label_color,line_color,border_color,y_offset,bdr_width,font_label_size
+    global font_msg_size,debug_toggle
+    
     # Write updated values to config.py
     with open("config.py", "w") as f:
         f.write(f'# Feel Free to change the first 11 parameters\n')
@@ -283,10 +297,12 @@ def check_verse_len(verse_text):
     global font_msg_size
     if len(verse_text) >= 200:
         temp_font_size = font_msg_size - 10
-    elif len(verse_text) >= 285:
+    elif len(verse_text) >= 265:
         temp_font_size = font_msg_size - 20
-    elif len(verse_text) >= 375:
+    elif len(verse_text) >= 350:
         temp_font_size = font_msg_size - 30
+    elif len(verse_text) >= 350:
+        temp_font_size = font_msg_size - 40
         
     elif len(verse_text) <= 200:
         temp_font_size = font_msg_size + 0
@@ -302,10 +318,10 @@ def check_verse_len(verse_text):
     
 def update_time():
     """Updates the clock label with the current time."""
-    global font_label_size, font_msg_size
-    global light_dark_mode,light_mode_on,dark_mode_on
-    global dark_bg_color,dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
-    global bg_color,msg_color,label_color,light_dark_mode
+    global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
+    global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
+    global bg_color,msg_color,label_color,line_color,border_color,y_offset,bdr_width,font_label_size
+    global font_msg_size,debug_toggle
 
     if use_screen_mode == 1:
         check_time_and_toggle() # Check the time to see if screen mode should change
@@ -439,7 +455,7 @@ if __name__ == "__main__":
                                  activebackground=bg_color, activeforeground="dark gray", highlightthickness=0)
     invisible_button1.pack() # , side=tk.TOP, anchor=tk.SE pady=20
     # Place the button in the upper-right corner
-    invisible_button1.place(relx=1.0, y=5, anchor="ne") 
+    invisible_button1.place(relx=1.0, y=0, anchor="ne") 
 
     # quit program to desktop button hidden in upper left corner
     button2_text = "Quit\nClock" # use newlines to make the button bigger for fingers
@@ -481,7 +497,7 @@ if __name__ == "__main__":
                                  activebackground=bg_color, activeforeground="dark gray", highlightthickness=0)
     invisible_button5.pack() # , side=tk.TOP, anchor=tk.SE pady=20
     # Place the button in the upper-right corner
-    invisible_button5.place(relx=1.0, y=45, anchor="ne") 
+    invisible_button5.place(relx=1.0, y=40, anchor="ne") 
 
     # Light/Dark Mode based on time of day
     if use_screen_mode == 1:
@@ -493,7 +509,7 @@ if __name__ == "__main__":
                                  activebackground=bg_color, activeforeground="dark gray", highlightthickness=0)
     invisible_button6.pack() # , side=tk.TOP, anchor=tk.SE pady=20
     # Place the button in the upper-right corner
-    invisible_button6.place(relx=1.0, y=90, anchor="ne") 
+    invisible_button6.place(relx=1.0, y=85, anchor="ne") 
 
 
     # Initial call to update the time and verse 
