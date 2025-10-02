@@ -1,4 +1,4 @@
-# Bible Clock v0.4 - Mark Harris
+# Bible Verse Clock v0.5 - Mark Harris
 # Based on API at https://github.com/wldeh/bible-api
 # tkinter color chart; https://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html
 # This version displays to cmd line and to Display in Full Screen Mode
@@ -6,7 +6,7 @@
 # See file 'config.py' to change colors, borders etc.
 # See file 'bible_dict' for available bible versions from API, as well as fonts used.
 # sudo apt install brightnessctl, sudo brightnessctl set <percentage>% for touch screen calibration
-
+# Light and Dark modes now available.
 
 # Imports
 import sys
