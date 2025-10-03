@@ -43,6 +43,9 @@ Finally, use the display configuration menu on the desktop to invert the display
 <code>sudo clone https://github.com/markyharris/bible_clock.git</code><p>
 <li>Test software by entering;<p>
 <code>sudo python3 bible_clock.py</code>
+<ul>
 
-
+Connect the display screen you plan to use.
+If the display also is a touchscreen, then install the necessary driver and calibrate it. The development unit built used a 5" touch display that mounted directly to RPi header. Then a 90 degree power adapter was needed so the power cord came out the back.
+Build a frame as desired. 
 Good luck and enjoy.
