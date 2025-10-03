@@ -33,15 +33,15 @@ Finally, use the display configuration menu on the desktop to invert the display
 <ul>
 <li>Use the Raspberry Pi imager (https://www.raspberrypi.com/software/) to install the latest version of the OS onto an SD card. 8 gigs or bigger seem to work fine.
 <li>Put SD card into the RPi and boot up. Give it time, since the first boot may take a while. It may be preferable to have it connected to a monitor and keyboard temporarily.
-<li>Update the software if necessary on your RPi by entering the terminal program from the desktop and enter;
-<code>sudo apt update</code>
-<code>sudo apt full-upgrade</code>
+<li>Update the software if necessary on your RPi by entering the terminal program from the desktop and enter;<p></p>
+<code>sudo apt update</code><p>
+<code>sudo apt full-upgrade</code><p>
 <code>sudo reboot</code>
-<li>Clone the bible_clock software onto your RPi by entering
-<code>sudo mkdir bible_clock</code>
-<cold>cd bible_clock</code>
-<code>sudo clone https://github.com/markyharris/bible_clock.git</code>
-<li>Test software by entering;
+<li>Clone the bible_clock software onto your RPi by entering<p>
+<code>sudo mkdir bible_clock</code><p>
+<cold>cd bible_clock</code><p>
+<code>sudo clone https://github.com/markyharris/bible_clock.git</code><p>
+<li>Test software by entering;<p>
 <code>sudo python3 bible_clock.py</code>
 
 
