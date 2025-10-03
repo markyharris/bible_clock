@@ -39,7 +39,7 @@ Finally, use the display configuration menu on the desktop to invert the display
 <code>sudo reboot</code>
 <li>Clone the bible_clock software onto your RPi by entering<p>
 <code>sudo mkdir bible_clock</code><p>
-<cold>cd bible_clock</code><p>
+<code>cd bible_clock</code><p>
 <code>sudo clone https://github.com/markyharris/bible_clock.git</code><p>
 <li>Test software by entering;<p>
 <code>sudo python3 bible_clock.py</code>
