@@ -315,8 +315,46 @@ def check_verse_len(verse_text):
         temp_font_size = font_msg_size
     return temp_font_size
 
-    
+ 
+def create_wipe(root, canvas):
+    """
+    Creates and starts a screen wipe animation.
+    """
+    canvas_width = canvas.winfo_width()
+    canvas_height = canvas.winfo_height()
+
+    # Create the wiping rectangle just off the left edge of the canvas
+    # The `wipe_rect` variable is assigned the ID of the created canvas item.
+    wipe_rect = canvas.create_rectangle(
+        -canvas_width, 0, 0, canvas_height, fill="black", outline="black"
+    )
+
+    # Start the animation loop
+    animate_wipe(root, canvas, wipe_rect, canvas_width)
+
+
+def animate_wipe(root, canvas, item_id, target_x):
+    """
+    Recursively moves the wipe rectangle across the canvas.
+    """
+    # Get the current position of the item
+    coords = canvas.coords(item_id)
+    current_x = coords[0]
+
+    # If the wipe is not finished, move it and schedule the next step
+    if current_x < target_x:
+        canvas.move(item_id, 10, 0)  # Move 10 pixels to the right
+        root.after(10, animate_wipe, root, canvas, item_id, target_x)
+    else:
+        # After the wipe is complete, clean up the rectangle.
+        # Here you could load new screen elements.
+        canvas.delete(item_id)
+        print("Wipe complete. Ready to show new content.")
+        
+        
 def update_time():
+#    create_wipe(root, canvas_wipe)
+    
     """Updates the clock label with the current time."""
     global hour_12,light_dark_mode,use_screen_mode,light_mode_on,dark_mode_on,dark_bg_color
     global dark_msg_color,dark_label_color,light_bg_color,light_msg_color,light_label_color
@@ -435,6 +473,10 @@ if __name__ == "__main__":
     canvas = tk.Canvas(root, bg=bg_color)
     root.update_idletasks() # Update the window to get accurate dimensions
     draw_line(y_offset) # pass the Y coordinate
+    
+#    canvas_wipe = tk.Canvas(root, width=500, height=400, bg="darkgrey")
+#    canvas_wipe.pack(pady=10)
+
      
     # Create a Message widget to display the Verse Text
     msg = Message(root,

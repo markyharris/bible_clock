@@ -36,7 +36,7 @@ To add shortcut to RPi desktop, create textfile 'bible_clock.desktop' on the des
 /home/pi/Desktop/yourname.desktop. Then add;
 
 [Desktop Entry]
-Name=My Name
+Name=Bible Verse Clock
 Comment=My application which does this
 Icon=/home/pi/bible_clock/bible_icon.png
 Exec=/usr/bin/python3 /home/pi/bible_clock/bible_clock.py

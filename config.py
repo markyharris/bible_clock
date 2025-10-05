@@ -1,7 +1,7 @@
 # Feel Free to change the first 11 parameters
 hour_12 = 1    # 1 for 12 hour, 0 for 24 hour
 light_dark_mode = 1    # 1 = Light mode, 0 = Dark mode
-use_screen_mode = 0    # 1 = Turn on light/dark mode switching
+use_screen_mode = 1    # 1 = Turn on light/dark mode switching
 light_mode_on = "0730"    # 4 digit 12 or 24 hour time in quotes, no :
 dark_mode_on = "2100"    # 4 digit 12 or 24 hour time in quotes, no :
 
