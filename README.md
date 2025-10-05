@@ -43,8 +43,9 @@ Finally, If needed for your frame, use the display configuration menu on the des
 <code>sudo apt update</code><p>
 <code>sudo apt full-upgrade</code><p>
 <code>sudo reboot</code>
-<ul><p>
+</ul><p>
 <b>Note:</b> you can also use the update mode on the desktop if you prefer.
+  
 <ul>
 <li>From the Terminal program, Clone the bible_clock software onto your RPi by entering<p>
 <code>sudo mkdir bible_clock</code><p>
