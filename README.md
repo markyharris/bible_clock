@@ -59,6 +59,6 @@ If the display also is a touchscreen, then install the necessary driver and cali
 
 The development unit built used a 5" touch display that mounted directly to RPi header, so a 90 degree power adapter was needed so the power cord came out the back.
 
-Build a frame as desired. The development unit used a 3d printed case taken from Thingyverse, but a nice wood frame would be nice too.
+Build a frame as desired. The development unit used a 3d printed case taken from Thingyverse, but a wood frame would be nice too.
 
 Good luck and enjoy.
