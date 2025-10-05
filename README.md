@@ -23,13 +23,17 @@ These buttons are transparent till the mouse is hovered over one of them. Then i
 There is a config file that keeps track of the desired behavior of the clock. This can be edited to change items like the times used to change between Light and Dark modes. Also you can change the colors used for both the Light and Dark display modes.
 
 While the unit built during development used an <a href="https://www.elecrow.com/hdmi-5-inch-800x480-tft-display-for-raspberry-pi-b-p-1384.html?srsltid=AfmBOopdu3iTrjXjR9FxFRh_uzjL6nvhWNImvfrW12346wcKIUp9Ezqk" target="_blank">Elecrow 5 inch display</a>, the software was written in hopes that most any display size could be used. However this has not been widely tested. Your mileage may very. You can change the font sizes in the 'config.py' file and the font used in the 'bible_dict.py' to help adjust the look of the display to better work with different sizes of displays.<br>
-<b>NOTE:</b> The main program 'bible_clock.py' must not be running when making edits to the 'config.py' file, as the program locks this file so it can't be overwritten while the program is runnning.
+<b>NOTE:</b> The main program 'bible_clock.py' must not be running when making edits to the 'config.py' file, as the program locks this file so it can't be overwritten while the program is runnning. Also, change the password for the RPi, to something like 'bible', rather than the ubiquitous 'raspberry'. You can watch this video for more info; https://youtu.be/yqGsOCZzXec?si=ecWkq4q0Hs-8otca
 
 The software was written to work with the latest version of the RPi operating system and imager; https://www.raspberrypi.com/software/. Most all of the dependecies are included with the latest image. The one that will need to be manually installed is 'Requests'. For information on installing this see; https://docs.python-requests.org/en/stable/user/install/
 
-Using the information in the file 'autostart_instructions.txt' setup your RPi to automatically run 'bible_clock.py'. You can also add a shortcut to the Unix desktop if desired. An icon is provided that can be used as the icon on the desktop if desired.
+To make the process easier, the imager will ask if you would like to change settings. Answer 'Yes' and enable SSH, and Wifi for your system.
 
-Finally, use the display configuration menu on the desktop to invert the display so that the power plug is pointing down, rather than up. This made putting a frame together much easier. Obviously this is optional. A 90 degree micro usb adapter really helped the display frame look clean.
+Using the information in the file 'autostart_instructions.txt' setup your RPi to automatically run 'bible_clock.py'. You can also add a shortcut to the Unix desktop if desired. An icon is provided that can be used as the icon on the desktop if desired. NOTE: On rare occasions the program will not display full screen when first powered up. If this happens, reboot the RPi, and it will display full screen.
+
+Another tool to help with development is to enable VNC on your RPi and use RealVNC on your computer to help install and run Bible Verse Clock. To enable VNC, from the RPi's desktop select 'Preferences/Raspberry Pi Configuration/Interfaces' and enable 'VNC'. If it's not already, enable 'SSH' on the same page. This will give you 2 ways to remotely control your project.
+
+Finally, If needed for your frame, use the display configuration menu on the desktop to invert the display so that the power plug is pointing down, rather than up. Go to 'Preferences/Screen Configuration'. When the next window appears, right click on the HDMI screen provided and select 'Orientation/Inverted'. This makes putting a frame together much easier. A 90 degree micro usb adapter really helped the display frame look clean. Obviously this is optional. 
 
 <h2>Summary of the build</h2>
 <ul>
