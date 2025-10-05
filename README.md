@@ -48,9 +48,8 @@ Finally, If needed for your frame, use the display configuration menu on the des
   
 <ul>
 <li>From the Terminal program, Clone the bible_clock software onto your RPi by entering<p>
-<code>sudo mkdir bible_clock</code><p>
-<code>cd bible_clock</code><p>
-<code>sudo clone https://github.com/markyharris/bible_clock.git</code><p>
+<code>sudo git clone https://github.com/markyharris/bible_clock.git</code><p>
+<code>cd bible_clock</code>
 <li>Test software by entering;<p>
 <code>sudo python3 bible_clock.py</code>
 </ul><p>
