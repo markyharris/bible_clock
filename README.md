@@ -29,7 +29,7 @@ The software was written to work with the latest version of the RPi operating sy
 
 To make the process easier, the imager will ask if you would like to change settings. Answer 'Yes' and enable SSH, and Wifi for your system. Also, change the password for the RPi, to something like 'bible', rather than the ubiquitous 'raspberry'. You can watch this video for more info; https://youtu.be/yqGsOCZzXec?si=ecWkq4q0Hs-8otca
 
-Using the information in the file 'autostart_instructions.txt' setup your RPi to automatically run 'bible_clock.py'. You can also add a shortcut to the Unix desktop if desired. An icon is provided that can be used as the icon on the desktop if desired. NOTE: On rare occasions the program will not display full screen when first powered up. If this happens, reboot the RPi, and it will display full screen.
+Using the information in the file 'autostart_instructions.txt' setup your RPi to automatically run 'bible_clock.py'. You can also add a shortcut to the Unix desktop if desired. An icon is provided that can be used as the icon on the desktop if desired. <b>NOTE:</b> On rare occasions the program will not display full screen when first powered up. If this happens, reboot the RPi, and it will display full screen.
 
 Another tool to help with development is to enable VNC on your RPi and use RealVNC on your computer to help install and run Bible Verse Clock. To enable VNC, from the RPi's desktop select 'Preferences/Raspberry Pi Configuration/Interfaces' and enable 'VNC'. If it's not already, enable 'SSH' on the same page. This will give you 2 ways to remotely control your project.
 
@@ -37,13 +37,14 @@ Finally, If needed for your frame, use the display configuration menu on the des
 
 <h2>Summary of the build</h2>
 <ul>
-<li>Use the Raspberry Pi imager (https://www.raspberrypi.com/software/) to install the latest version of the OS onto an SD card. 8 gigs or bigger seem to work fine.
+<li>Use the Raspberry Pi imager (https://www.raspberrypi.com/software/) to install the latest version of the OS onto an SD card. 8 gigs or bigger seem to work fine. Change the settings to enable SSH, Wifi and Password.
 <li>Put SD card into the RPi and boot up. Give it time, since the first boot may take a while. It may be preferable to have it connected to a monitor and keyboard temporarily.
 <li>Update the software if necessary on your RPi by entering the terminal program from the desktop and enter;<p></p>
 <code>sudo apt update</code><p>
 <code>sudo apt full-upgrade</code><p>
 <code>sudo reboot</code>
-<li>Clone the bible_clock software onto your RPi by entering<p>
+<b></b>Note:</p>b> you can also use the update mode on the desktop if you prefer.
+<li>From the Terminal program, Clone the bible_clock software onto your RPi by entering<p>
 <code>sudo mkdir bible_clock</code><p>
 <code>cd bible_clock</code><p>
 <code>sudo clone https://github.com/markyharris/bible_clock.git</code><p>
@@ -52,10 +53,10 @@ Finally, If needed for your frame, use the display configuration menu on the des
 </ul><p>
 
 Connect the display screen you plan to use.
-If the display also is a touchscreen, then install the necessary driver and calibrate it. 
+If the display also is a touchscreen, then install the necessary driver and calibrate it. Also, as mentioned enable 'VNC' from the Preferences menu on the desktop.
 
-The development unit built used a 5" touch display that mounted directly to RPi header. Then a 90 degree power adapter was needed so the power cord came out the back.
+The development unit built used a 5" touch display that mounted directly to RPi header, so a 90 degree power adapter was needed so the power cord came out the back.
 
-Build a frame as desired. 
+Build a frame as desired. The development unit used a 3d printed case taken from Thingyverse, but a nice wood frame would be nice too.
 
 Good luck and enjoy.
