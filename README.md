@@ -55,7 +55,7 @@ Finally, If needed for your frame, use the display configuration menu on the des
 </ul><p>
 
 Connect the display screen you plan to use.
-If the display also is a touchscreen, then install the necessary driver and calibrate it. Also, as mentioned enable 'VNC' from the Preferences menu on the desktop.
+If the display also is a touchscreen, then install the necessary driver and calibrate it. Also, as mentioned enable 'VNC' from the Preferences menu on the desktop. There is a file called 'touchscreen 5inch instructions.txt' that provides more info on setting up the touchscreen if needed.
 
 The development unit built used a 5" touch display that mounted directly to RPi header, so a 90 degree power adapter was needed so the power cord came out the back.
 
