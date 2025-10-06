@@ -23,7 +23,7 @@ These buttons are transparent till the mouse is hovered over one of them. Then i
 There is a config file that keeps track of the desired behavior of the clock. This can be edited to change items like the times used to change between Light and Dark modes. Also you can change the colors used for both the Light and Dark display modes.
 
 While the unit built during development used an <a href="https://www.elecrow.com/hdmi-5-inch-800x480-tft-display-for-raspberry-pi-b-p-1384.html?srsltid=AfmBOopdu3iTrjXjR9FxFRh_uzjL6nvhWNImvfrW12346wcKIUp9Ezqk" target="_blank">Elecrow 5 inch display</a>, the software was written in hopes that most any display size could be used. However this has not been widely tested. Your mileage may very. You can change the font sizes in the 'config.py' file and the font used in the 'bible_dict.py' to help adjust the look of the display to better work with different sizes of displays.<br>
-<b>NOTE:</b> The main program 'bible_clock.py' must not be running when making edits to the 'config.py' file, as the program locks this file so it can't be overwritten while the program is runnning. 
+<b>NOTE:</b> The main program 'bible_clock.py' must not be running when making edits to the 'config.py' file, as the program locks this file so it can't be overwritten while the program is running. 
 
 The software was written to work with the latest version of the RPi operating system and imager; https://www.raspberrypi.com/software/. Most all of the dependecies are included with the latest image. The one that will need to be manually installed is 'Requests'. For information on installing this see; https://docs.python-requests.org/en/stable/user/install/
 
