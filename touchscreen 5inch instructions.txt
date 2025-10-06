@@ -30,4 +30,3 @@ you should put into a calibration file. For the Pi, the filename should be
 /usr/share/X11/xorg.conf.d/99-calibration.conf.
 
 Use the touchscreen calibrator under Preferences in the Unix desktop to calibrate. 
-This may or may not work properly.
